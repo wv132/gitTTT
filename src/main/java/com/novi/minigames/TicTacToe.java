@@ -40,20 +40,8 @@ public class TicTacToe {
         Player player1 = new Player(player1Name, player1Marker);
         Player player2 = new Player(player2Name, player2Marker);
 
-        System.out.println("player 1 name: " + player1.getName());
-        System.out.println("player 1 marker: " + player1.getMarker());
-        System.out.println("PLayer 1 score: " + player1.getScore());
-        System.out.println("");
-        System.out.println("player 2 name: " + player2.getName());
-        System.out.println("player 2 marker: " + player2.getMarker());
-        System.out.println("player 2 score: " + player2.getScore());
-
         printBoard();
-        System.out.println("");
 
-        board[0] = player2Marker;
-
-        printBoard();
     }
     public char[] board = new char[9];
 
