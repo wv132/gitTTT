@@ -16,7 +16,7 @@ public class TicTacToe {
     Scanner input = new Scanner(System.in);
     Field field = new Field(3,3);
     boolean debug = true;
-    char[] board= new char[9];
+    char[] board; = new char[];
     
     
      
@@ -44,13 +44,13 @@ public class TicTacToe {
 // create players     
 //player 1 name and marker
         System.out.println("Player 1 name: ");
-        String player1Name = debug ? "Wouter" : input.nextLine();
+        String player1Name = debug ? "Willie" : input.nextLine();
         System.out.println("Player 1 marker (X or O): ");
         char player1Marker = debug ? 'X' : input.nextLine().charAt(0);
 // player 2 name and marker
 
         System.out.println("Player 2 name: ");
-        String player2Name = debug ? "Verveer" : input.nextLine();
+        String player2Name = debug ? "Wonka" : input.nextLine();
         char player2Marker = player1Marker == 'X' ? 'O' : 'X';
         System.out.println(player2Name + " has marker: " + player2Marker);
 
