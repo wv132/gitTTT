@@ -13,11 +13,17 @@ public class Player {
     //Create player name
     //Create player marker
     //Create player score
-  private final String name;
+  private String name;
   private char marker;
   private int score;
+  Scanner input = new Scanner(System.in);
   
-  
+  public Player(String name, char marker){
+      this.name = name;
+      this.marker = marker;
+      this.score = score;
+      
+  }
   
   public String getName(){
       return name;
@@ -34,11 +40,12 @@ public class Player {
       return score;
   }
   
-  public Player(String name, char marker){
-      this.name = name;
-      this.marker = marker;
-      this.score = score;
-      
+  public int getPlayerChoice(){
+      int position = input.nextInt();
+      return position;
   }
+  
+  
+  
   
 }
