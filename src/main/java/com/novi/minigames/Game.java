@@ -10,22 +10,6 @@ import java.util.*;
  * @author jvr
  */
 public class Game {
-    Scanner reader = new Scanner(System.in);
-    System.out.println("Menu:");
-        System.out.println("1. TicTacToe\n2. Four in a row");
-        System.out.println("0. Quit.");
-        System.out.print("Menu choice: ");
-        
-        int input = reader.nextInt();
-        System.out.println();
-        
-        switch(input){
-            case 0:
-                break;     
-            case 1: TicTacToe game = new TicTacToe(); game.playGame();            
-                break;  
-            case 2:
-                break;
-        }
+    
     
 }

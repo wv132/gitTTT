@@ -15,10 +15,8 @@ public class Field {
     int x;
     int y;
     
-    public Field(int x, int y){
-        this.x = x;
-        this.y = y;
-    }
+    
+    
     
         
    
@@ -54,7 +52,7 @@ public class Field {
     }
     
     public int getBoardPosition(int position,char[] board){
-        return board[position -1];
+        return board[position];
     }
    
    
