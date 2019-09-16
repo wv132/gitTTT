@@ -59,7 +59,7 @@ public class TicTacToeTest {
     @org.junit.jupiter.api.Test
     public void testPlay() {
         System.out.println("Play");
-        TicTacToe instance = new TicTacToe();
+        TTT instance = new TTT();
         instance.Play();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -71,7 +71,7 @@ public class TicTacToeTest {
     @org.junit.jupiter.api.Test
     public void testCreateBoard() {
         System.out.println("createBoard");
-        TicTacToe instance = new TicTacToe();
+        TTT instance = new TTT();
         instance.createBoard();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -83,7 +83,7 @@ public class TicTacToeTest {
     @org.junit.jupiter.api.Test
     public void testPrintBoard() {
         System.out.println("printBoard");
-        TicTacToe instance = new TicTacToe();
+        TTT instance = new TTT();
         instance.printBoard();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
