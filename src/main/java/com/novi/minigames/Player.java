@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * getters hebben geen parameters. getters pakken namelijk binnen de class de gegevens
+worden opgehaald(get) uit dezelfde class.
+ * Setters hebben wel parameters, 
+constructor maak je als je een class hebt gemaakt. de constructor bepaald de paramaeters om een object te maken.
  */
 package com.novi.minigames;
 import java.util.*;
