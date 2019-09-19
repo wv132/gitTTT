@@ -8,10 +8,6 @@ import java.util.*;
  */
 public class TTT {
 
-    public static Scanner INPUT = new Scanner(System.in);
-    public static boolean DEBUG = true;
-    
-
     private Player player1;
     private Player player2;
 
@@ -26,9 +22,7 @@ public class TTT {
         // init board
         int boardSize = 3;
         board = new char[boardSize * boardSize];
-        for (int i = 0; i < boardSize * boardSize; i++) {
-            board[i] = (char) ('1' + i);
-        }
+        createBoard(board, boardSize);
 
     }
 
@@ -56,7 +50,7 @@ public class TTT {
                     System.out.println(currentPlayer.getName() + " has won the game!");
                     currentPlayer.addScore();
                     printBoard(board);
-                    turnCount = 10;
+                    break;
                     
 
                 } else {
@@ -74,13 +68,20 @@ public class TTT {
 
     private boolean fullBoard(char[] board) {
         //TODO controle of het bord vol is en dat het spel is geeindigd als er geen winnaar is dan betekend dit een gelijk spel. geen punten
-        
+        //Eerste opzet maar wekt nog niet
+        boolean full = false;
         for(int i = 0; i<board.length; i++){
-            if(board[i] != 'X' || board[i] !='O'){
-                return false;
-            }    
+            if(board[i] == 'X' || board[i] =='O'){
+                
+                //return false;
+                break;
+            }  
+            else {
+                full = true;
+            }
         }
-        return true;
+        
+        return full;
     }
 
     private boolean winGame(char[] board, char mark) {
@@ -102,18 +103,22 @@ public class TTT {
     }
 
     private char placeMarker(char[] board, char mark) {
-        //TODO
-        // functie om de marker van de current player to zetten
             System.out.print("Choose your postion to place your marker: ");
-                int pos = INPUT.nextInt();
+                int pos = Game.INPUT.nextInt();
                 
         return board[pos - 1] = mark;
+    }
+    
+    private void createBoard(char[] board, int boardSize){
+        for (int i = 0; i < boardSize * boardSize; i++) {
+            board[i] = (char) ('1' + i);
+        }
     }
 
     private void printBoard(char[] board) {
         System.out.println(" +---+---+---+");
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < boardSize; i++) {
+            for (int j = 0; j < boardSize; j++) {
                 System.out.print(" | ");
                 System.out.print(board[i * 3 + j]);
             }

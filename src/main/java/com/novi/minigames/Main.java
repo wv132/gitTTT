@@ -21,12 +21,12 @@ public class Main {
         // create players     
 //player 1 name and marker
         System.out.println("Player 1 name: ");
-        String player1Name = TTT.DEBUG ? "Jan" : TTT.INPUT.nextLine();
+        String player1Name = Game.DEBUG ? "Jip" : Game.INPUT.nextLine();
         char player1Marker = 'X';
-// player 2 name and marker
 
+// player 2 name and marker
         System.out.println("Player 2 name: ");
-        String player2Name = TTT.DEBUG ? "Piet" : TTT.INPUT.nextLine();
+        String player2Name = Game.DEBUG ? "Janneke" : Game.INPUT.nextLine();
         char player2Marker = 'O';
 
 // Create object of player
@@ -34,9 +34,9 @@ public class Main {
         Player player2 = new Player(player2Name, player2Marker);
         
         
-       //new Game();
+       while(true){
        Scanner reader = new Scanner(System.in);
-    System.out.println("Menu:");
+        System.out.println("Menu:");
         System.out.println("1. TicTacToe\n2. Four in a row");
         System.out.println("0. Quit.");
         System.out.print("Menu choice: ");
@@ -53,6 +53,7 @@ public class Main {
                 break;
         }
                 
+    }
     }
     
 }

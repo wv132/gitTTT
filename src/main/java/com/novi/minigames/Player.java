@@ -2,7 +2,7 @@
  * getters hebben geen parameters. getters pakken namelijk binnen de class de gegevens
 worden opgehaald(get) uit dezelfde class.
  * Setters hebben wel parameters, 
-constructor maak je als je een class hebt gemaakt. de constructor bepaald de paramaeters om een object te maken.
+    constructor maak je als je een class hebt gemaakt. de constructor bepaald de paramaeters om een object te maken.
  */
 package com.novi.minigames;
 import java.util.*;

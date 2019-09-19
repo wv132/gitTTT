@@ -10,6 +10,8 @@ import java.util.*;
  * @author jvr
  */
 public class Game {
+    public static Scanner INPUT = new Scanner(System.in);
+    public static boolean DEBUG = true;
     
     
 }
