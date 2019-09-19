@@ -20,9 +20,9 @@ public class TTT {
         this.player2 = player2;
 
         // init board
-        int boardSize = 3;
+        boardSize = 3;
         board = new char[boardSize * boardSize];
-        createBoard(board, boardSize);
+        
 
     }
 
@@ -34,6 +34,7 @@ public class TTT {
         
 
         while (playing) {
+            createBoard(board, boardSize);
             System.out.println(player1.getName() + " points: " + player1.getScore());
             System.out.println(player2.getName() + " points: " + player2.getScore());
             while (turnCount < 11) {
@@ -45,6 +46,7 @@ public class TTT {
                 
                 if (fullBoard(board)==true){
                     System.out.println("No winner it is a tie!");
+                    break;
                 }
                 else if (winGame(board,currentPlayer.getMarker())) {
                     System.out.println(currentPlayer.getName() + " has won the game!");
@@ -71,7 +73,7 @@ public class TTT {
         //Eerste opzet maar wekt nog niet
         boolean full = false;
         for(int i = 0; i<board.length; i++){
-            if(board[i] == 'X' || board[i] =='O'){
+            if(board[i] != 'X' || board[i] !='O'){
                 
                 //return false;
                 break;
