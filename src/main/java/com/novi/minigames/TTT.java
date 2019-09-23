@@ -1,7 +1,7 @@
 package com.novi.minigames;
 
 /**
- *
+ * Game Tic Tac Toe (TTT)
  * @author jvr
  */
 public class TTT {
@@ -20,6 +20,7 @@ public class TTT {
         // init board
         boardSize = 3;
         board = new char[boardSize * boardSize];
+        //Field[] board = new Field[boardSize * boardSize];
         
 
     }
@@ -32,24 +33,24 @@ public class TTT {
         
 
         while (playing) {
-            createBoard(board, boardSize);
+            createBoard(boardSize);
             System.out.println(player1.getName() + " points: " + player1.getScore());
             System.out.println(player2.getName() + " points: " + player2.getScore());
-            while (turnCount < 11) {
+            while (turnCount < 10) {
                 System.out.println("Turn " + turnCount);
                 System.out.println("Current player: " + currentPlayer.getName());
-                printBoard(board);
+                printBoard();
 
-                placeMarker(board,currentPlayer.getMarker());
+                placeMarker(currentPlayer.getMarker());
                 
                 if (fullBoard(board)==true){
                     System.out.println("No winner it is a tie!");
                     break;
                 }
-                else if (winGame(board,currentPlayer.getMarker())) {
+                else if (winGame(currentPlayer.getMarker())) {
                     System.out.println(currentPlayer.getName() + " has won the game!");
                     currentPlayer.addScore();
-                    printBoard(board);
+                    printBoard();
                     break;
                     
 
@@ -86,7 +87,7 @@ public class TTT {
         return full;
     }
 
-    private boolean winGame(char[] board, char mark) {
+    private boolean winGame(char mark) {
         boolean win = false;
         //Horizontal
         if (board[0] == mark & board[1] == mark & board[2] == mark || board[3] == mark & board[4] == mark & board[5] == mark || board[6] == mark & board[7] == mark & board[8] == mark){
@@ -104,20 +105,20 @@ public class TTT {
         return win;
     }
 
-    private char placeMarker(char[] board, char mark) { 
+    private char placeMarker(char mark) { 
                 System.out.print("Choose your postion to place your marker: ");          
                int pos = Game.INPUT.nextInt();
                           
         return board[pos - 1] = mark;
     }
     
-    private void createBoard(char[] board, int boardSize){
+    private void createBoard(int boardSize){
         for (int i = 0; i < boardSize * boardSize; i++) {
             board[i] = (char) ('1' + i);
         }
     }
 
-    private void printBoard(char[] board) {
+    private void printBoard() {
         System.out.println(" +---+---+---+");
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
