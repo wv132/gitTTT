@@ -5,7 +5,7 @@ worden opgehaald(get) uit dezelfde class.
     constructor maak je als je een class hebt gemaakt. de constructor bepaald de paramaeters om een object te maken.
  */
 package com.novi.minigames;
-import java.util.*;
+
 /**
  *
  * @author jvr
@@ -17,7 +17,6 @@ public class Player {
   private String name;
   private char marker;
   private int score;
-  Scanner input = new Scanner(System.in);
   
   public Player(String name, char marker){
       this.name = name;
@@ -42,7 +41,7 @@ public class Player {
   }
   
   public int getPlayerChoice(){
-      int position = input.nextInt();
+      int position = Game.INPUT.nextInt();
       return position;
   }
   

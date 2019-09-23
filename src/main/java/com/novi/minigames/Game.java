@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.novi.minigames;
-import java.util.*;
+import java.util.Scanner;
 /**
  *
  * @author jvr

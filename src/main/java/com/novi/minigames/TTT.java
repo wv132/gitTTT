@@ -1,7 +1,5 @@
 package com.novi.minigames;
 
-import java.util.*;
-
 /**
  *
  * @author jvr
@@ -72,11 +70,13 @@ public class TTT {
         //TODO controle of het bord vol is en dat het spel is geeindigd als er geen winnaar is dan betekend dit een gelijk spel. geen punten
         //Eerste opzet maar wekt nog niet
         boolean full = false;
-        for(int i = 0; i<board.length; i++){
+        for (int i = 0; i < board.length; i++) {
             if(board[i] != 'X' || board[i] !='O'){
-                
-                //return false;
-                break;
+                System.out.println("board["+i+"] = "+board[i]);
+                System.out.println(full);
+               
+               
+                //break;
             }  
             else {
                 full = true;
@@ -104,10 +104,10 @@ public class TTT {
         return win;
     }
 
-    private char placeMarker(char[] board, char mark) {
-            System.out.print("Choose your postion to place your marker: ");
-                int pos = Game.INPUT.nextInt();
-                
+    private char placeMarker(char[] board, char mark) { 
+                System.out.print("Choose your postion to place your marker: ");          
+               int pos = Game.INPUT.nextInt();
+                          
         return board[pos - 1] = mark;
     }
     
