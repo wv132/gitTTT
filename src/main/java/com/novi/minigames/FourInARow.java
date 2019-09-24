@@ -68,19 +68,36 @@ public class FourInARow {
         return false;
     }
 
-    private boolean gameEnded(Player player) {
-        boolean result = false;
-        for (int i = 0; i < 8; i++) {
-            if (board[i].isEmpty()){
-                result = true;
-            }
-        }
-        return result;
+    private void gameEnded(Player player) {
+        
     }
 
     private void resetGame() {
 
     }
+    
+    private boolean winGame(char mark) {
+        boolean win = false;
+        //Horizontal
+        if (board[0] == mark & board[1] == mark & board[2] == mark || board[3] == mark & board[4] == mark & board[5] == mark || board[6] == mark & board[7] == mark & board[8] == mark){
+            win = true;
+        }
+        //Vertical
+        else if (board[0] == mark & board[3] == mark & board[6] == mark || board[1] == mark & board[4] == mark & board[7] == mark || board[2] == mark & board[5] == mark & board[8] == mark){
+            win = true;
+        }
+        //Diagonal
+        else if (board[0] == mark & board[4] == mark & board[8] == mark || board[2] == mark & board[4] == mark & board[6] == mark){
+            win = true;
+        }
+        
+        return win;
+    }
+    
+    private boolean fullBoard(){
+        
+    }
+    
 
     private void printBoard() {
         System.out.println(" +---+---+---+");
