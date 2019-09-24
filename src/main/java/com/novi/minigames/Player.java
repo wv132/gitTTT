@@ -40,10 +40,6 @@ public class Player {
       return score;
   }
   
-  public int getPlayerChoice(){
-      int position = Game.INPUT.nextInt();
-      return position;
-  }
   
   
   

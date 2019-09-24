@@ -8,6 +8,7 @@ public class TTT {
 
     private Player player1;
     private Player player2;
+    private Player currentPlayer;
 
     private char[] board;
     private int boardSize;
@@ -16,7 +17,7 @@ public class TTT {
     public TTT(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
-
+        currentPlayer = player1;
         // init board
         boardSize = 3;
         board = new char[boardSize * boardSize];
@@ -29,7 +30,7 @@ public class TTT {
         boolean playing = true;
         int turnCount = 1;
         //init currentplayer
-        Player currentPlayer = player1;
+       //Player currentPlayer = player1;
         
 
         while (playing) {
@@ -55,7 +56,7 @@ public class TTT {
                     
 
                 } else {
-                    currentPlayer = currentPlayer == player1 ? player2 : player1;
+                    switchPlayer();
                     turnCount++;
 
                 }
@@ -104,7 +105,11 @@ public class TTT {
         
         return win;
     }
-
+    
+    private void switchPlayer(){
+        currentPlayer = currentPlayer == player1 ? player2 : player1;
+    }
+    
     private char placeMarker(char mark) { 
                 System.out.print("Choose your postion to place your marker: ");          
                int pos = Game.INPUT.nextInt();
@@ -114,7 +119,7 @@ public class TTT {
     
     private void createBoard(int boardSize){
         for (int i = 0; i < boardSize * boardSize; i++) {
-            board[i] = (char) ('1' + i);
+            board[i] = (char)('1' + i);
         }
     }
 

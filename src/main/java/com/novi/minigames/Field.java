@@ -10,26 +10,30 @@ package com.novi.minigames;
  * @author jvr
  */
 public class Field {
-    //Create fields (board)
-    //char[] board;
     
     private char value;
     private char defaultValue;
     
-    
+    // constructor
     public Field(char value){
         this.value = defaultValue = value;
     }
     
-    public void setField (char value){
+    public void set (char value){
         this.value = value;
+    }
+    
+    public char get(){
+        return value;
     }
     
     public boolean isEmpty(){
         return value == defaultValue;
     }
     
-   
+   public void reset(){
+       this.value = defaultValue;
+   }
 
     
     
