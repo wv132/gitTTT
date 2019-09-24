@@ -47,9 +47,9 @@ public class Main {
         switch(chosenGame){
             case 0:
                 break;     
-            case 1: TTT game = new TTT(player1,player2); game.playGame();            
+            case 1: TTT game1 = new TTT(player1,player2); game1.playGame();            
                 break;  
-            case 2:
+            case 2: FIR game2 = new FIR(player1,player2); game2.playGame();
                 break;
         }
                 

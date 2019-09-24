@@ -43,7 +43,7 @@ public class TTT {
 
                 placeMarker(currentPlayer.getMarker());
                 
-                if (fullBoard(board)==true){
+                if (fullBoard(board)){
                     System.out.println("No winner it is a tie!");
                     break;
                 }
@@ -72,7 +72,7 @@ public class TTT {
         //Eerste opzet maar wekt nog niet
         boolean full = false;
         for (int i = 0; i < board.length; i++) {
-            if(board[i] != 'X' || board[i] !='O'){
+            if(board[i] != 'X' | board[i] !='O'){
                 System.out.println("board["+i+"] = "+board[i]);
                 System.out.println(full);
                
