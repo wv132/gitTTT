@@ -18,12 +18,12 @@ public class Main {
         // create players     
 //player 1 name and marker
         System.out.println("Player 1 name: ");
-        String player1Name = Game.DEBUG ? "Jip" : Game.INPUT.nextLine();
+        String player1Name = Game.DEBUG ? "Speler 1" : Game.INPUT.nextLine();
         char player1Marker = 'X';
 
 // player 2 name and marker
         System.out.println("Player 2 name: ");
-        String player2Name = Game.DEBUG ? "Janneke" : Game.INPUT.nextLine();
+        String player2Name = Game.DEBUG ? "Speler 2" : Game.INPUT.nextLine();
         char player2Marker = 'O';
 
 // Create object of player

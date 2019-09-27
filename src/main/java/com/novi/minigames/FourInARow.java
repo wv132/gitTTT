@@ -37,18 +37,30 @@ public class FourInARow {
             System.out.println("Score "+ player1.getName()+": "+player1.getScore());
             System.out.println("Score "+ player2.getName()+": "+player2.getScore());
             
-        while(!gameEnded){            
+        while(!gameEnded){  
+            
 
             printBoard();
             System.out.println(currentPlayer.getName() + " Choose your field: ");
             int column = Game.INPUT.nextInt();
             if (setField(column - 1)) {
-                switchPlayer();
+                if(winGame(currentPlayer.getMarker())){
+                System.out.println(currentPlayer.getName() + " has won the game!");
+                    currentPlayer.addScore();
+                    printBoard();
+                    break;
+                }
+                else{
+                    switchPlayer();
+                }
+                
+                
             } else {
                 System.out.println("incorrect input, choose another field");
             }
+            
      
-        }// end of while(playing)    
+        }// end of while(!gameEnded)    
     }
 
     private void switchPlayer() {
@@ -79,15 +91,15 @@ public class FourInARow {
     private boolean winGame(char mark) {
         boolean win = false;
         //Horizontal
-        if (board[0] == mark & board[1] == mark & board[2] == mark || board[3] == mark & board[4] == mark & board[5] == mark || board[6] == mark & board[7] == mark & board[8] == mark){
+        if (this.board[0].get() == mark & this.board[1].get() == mark & this.board[2].get() == mark || this.board[3].get() == mark & this.board[4].get() == mark & this.board[5].get() == mark || this.board[6].get() == mark & this.board[7].get() == mark & this.board[8].get() == mark){
             win = true;
         }
         //Vertical
-        else if (board[0] == mark & board[3] == mark & board[6] == mark || board[1] == mark & board[4] == mark & board[7] == mark || board[2] == mark & board[5] == mark & board[8] == mark){
+        else if (this.board[0].get() == mark & this.board[3].get() == mark & this.board[6].get() == mark || this.board[1].get() == mark & this.board[4].get() == mark & this.board[7].get() == mark || this.board[2].get() == mark & this.board[5].get() == mark & this.board[8].get() == mark){
             win = true;
         }
         //Diagonal
-        else if (board[0] == mark & board[4] == mark & board[8] == mark || board[2] == mark & board[4] == mark & board[6] == mark){
+        else if (this.board[0].get() == mark & this.board[4].get() == mark & this.board[8].get() == mark || this.board[2].get() == mark & this.board[4].get() == mark & this.board[6].get() == mark){
             win = true;
         }
         
@@ -95,7 +107,7 @@ public class FourInARow {
     }
     
     private boolean fullBoard(){
-        
+       return false; 
     }
     
 
